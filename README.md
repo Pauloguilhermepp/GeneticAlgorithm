@@ -1,6 +1,6 @@
 # Genetic Algorithm
 
-This repository contains an implementation of a Genetic algorithm (AG) using the C++ language. An example of how to use it can be found in the Main.cpp file. Some of the parameters that can be modified for each execution of the algorithm are:
+This repository contains an implementation of a Genetic Algorithm (GA) using the C++ language. An example of how to use it can be found in the Main.cpp file. Some of the parameters that can be modified for each execution of the algorithm are:
 
 * **PopSize**: Size of the population.
 * **NumGenerations**: Number of generations in the GA.
