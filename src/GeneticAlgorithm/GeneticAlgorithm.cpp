@@ -136,8 +136,19 @@ void GeneticAlgorithm::createNewGeneration(){
     }
 }
 
+long double GeneticAlgorithm::checkNewValue(long double newValue){
+    if(newValue > maxValue){
+        newValue = maxValue;
+    }else if(newValue < minValue){
+        newValue = minValue;
+    }
+
+    return newValue;
+}
+
 void GeneticAlgorithm::uniformMutation(){
     int mutationGenePos;
+    long double newValue;
     std::vector<long double> vec;
 
     for(int i = 0; i < popSize; i++){
@@ -145,14 +156,10 @@ void GeneticAlgorithm::uniformMutation(){
             mutationGenePos = (int)((double)rand() / RAND_MAX * (numGenes));
 
             vec = pop[i].getVector();
-            vec[mutationGenePos] = uniformRandomNum(vec[mutationGenePos] - mutationParam, 
+            newValue = uniformRandomNum(vec[mutationGenePos] - mutationParam, 
                                                     vec[mutationGenePos] + mutationParam);
 
-            if(vec[mutationGenePos] > maxValue){
-                vec[mutationGenePos] = maxValue;
-            }else if(vec[mutationGenePos] < minValue){
-                vec[mutationGenePos] = minValue;
-            }
+            vec[mutationGenePos] = checkNewValue(newValue);
 
             pop[i].setVector(vec);
         }

@@ -31,6 +31,7 @@ class GeneticAlgorithm{
         std::vector<std::vector<long double>> onePointCrossover(int p1, int p2);
         std::vector<std::vector<long double>> twoPointsCrossover(int p1, int p2);
         void createNewGeneration();
+        long double checkNewValue(long double newValue);
         void uniformMutation();
         void showBestAns();
 
